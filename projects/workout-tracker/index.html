@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Workout Tracker</title>
+      <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+      <div class="container">
+            <nav class="navbar">
+                  <a href="../../index.html" class="back">&larr; Kembali ke portofolio</a>
+                  <span class="badge">App</span>
+            </nav>
+
+            <header class="header">
+                  <h1 class="title">Workout Tracker</h1>
+                  <p class="subtitle">Catat latihanmu, pantau total set dan volume 7 hari terakhir. Data tersimpan otomatis di
+                        browser kamu.</p>
+            </header>
+
+            <!-- Ringkasan 7 hari terakhir -->
+            <section class="stats" aria-label="Ringkasan 7 hari terakhir">
+                  <div class="stat">
+                        <span class="stat-label">Hari latihan</span>
+                        <strong id="stat-days" class="stat-value">0</strong>
+                  </div>
+                  <div class="stat">
+                        <span class="stat-label">Total set</span>
+                        <strong id="stat-sets" class="stat-value">0</strong>
+                  </div>
+                  <div class="stat">
+                        <span class="stat-label">Volume (kg)</span>
+                        <strong id="stat-volume" class="stat-value">0</strong>
+                  </div>
+            </section>
+
+            <section class="chart-card" aria-label="Grafik set per hari">
+                  <h2 class="section-title">Set per hari</h2>
+                  <div id="chart" class="chart"></div>
+            </section>
+
+            <!-- Form catat latihan -->
+            <form id="workout-form" class="form" autocomplete="off">
+                  <input id="w-date" class="input" type="date" required aria-label="Tanggal">
+                  <input id="w-name" class="input input-grow" type="text" list="exercise-list" placeholder="Nama latihan"
+                        maxlength="60" required aria-label="Nama latihan">
+                  <datalist id="exercise-list">
+                        <option value="Push Up"></option>
+                        <option value="Pull Up"></option>
+                        <option value="Squat"></option>
+                        <option value="Bench Press"></option>
+                        <option value="Deadlift"></option>
+                        <option value="Shoulder Press"></option>
+                        <option value="Plank"></option>
+                  </datalist>
+                  <input id="w-sets" class="input input-small" type="number" min="1" max="50" placeholder="Set" required
+                        aria-label="Jumlah set">
+                  <input id="w-reps" class="input input-small" type="number" min="1" max="500" placeholder="Reps" required
+                        aria-label="Jumlah repetisi">
+                  <input id="w-weight" class="input input-small" type="number" min="0" max="1000" step="0.5"
+                        placeholder="Kg" aria-label="Beban dalam kilogram (kosongkan untuk berat badan)">
+                  <button type="submit" class="button">Catat</button>
+            </form>
+
+            <!-- Riwayat -->
+            <h2 class="section-title">Riwayat latihan</h2>
+            <div id="history"></div>
+            <p id="empty" class="text-muted empty" hidden>Belum ada latihan. Catat yang pertama di atas.</p>
+      </div>
+
+      <script src="script.js"></script>
+</body>
+
+</html>

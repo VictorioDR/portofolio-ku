@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Task Tracker</title>
+      <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+      <div class="container">
+            <nav class="navbar">
+                  <a href="../../index.html" class="back">&larr; Kembali ke portofolio</a>
+                  <span class="badge">App</span>
+            </nav>
+
+            <header class="header">
+                  <h1 class="title">Task Tracker</h1>
+                  <p class="subtitle">Catat tugas harian, atur prioritas dan tenggat, lalu centang kalau sudah selesai. Data
+                        tersimpan otomatis di browser kamu.</p>
+            </header>
+
+            <form id="task-form" class="form" autocomplete="off">
+                  <input id="task-title" class="input input-grow" type="text" placeholder="Tugas baru..." maxlength="100"
+                        required aria-label="Judul tugas">
+                  <input id="task-due" class="input" type="date" aria-label="Tenggat">
+                  <select id="task-priority" class="input" aria-label="Prioritas">
+                        <option value="low">Rendah</option>
+                        <option value="medium" selected>Sedang</option>
+                        <option value="high">Tinggi</option>
+                  </select>
+                  <button type="submit" class="button">Tambah</button>
+            </form>
+
+            <div class="toolbar">
+                  <div class="filters" role="group" aria-label="Filter tugas">
+                        <button class="filter is-active" data-filter="all">Semua</button>
+                        <button class="filter" data-filter="active">Aktif</button>
+                        <button class="filter" data-filter="done">Selesai</button>
+                  </div>
+                  <span id="counter" class="text-muted"></span>
+            </div>
+
+            <ul id="task-list" class="task-list"></ul>
+            <p id="empty" class="text-muted empty" hidden>Belum ada tugas. Tambahkan satu di atas.</p>
+
+            <button id="clear-done" class="button button-outline" type="button" hidden>Hapus yang selesai</button>
+      </div>
+
+      <script src="script.js"></script>
+</body>
+
+</html>
